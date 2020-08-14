@@ -78,6 +78,9 @@ dependencies {
     }
     annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+
     implementation 'com.elvishew:xlog:1.6.1'
 
     implementation project(path: ':faceunity')

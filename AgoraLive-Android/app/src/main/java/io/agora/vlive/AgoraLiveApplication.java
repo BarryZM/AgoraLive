@@ -20,6 +20,7 @@ import com.elvishew.xlog.printer.file.backup.FileSizeBackupStrategy;
 import com.elvishew.xlog.printer.file.clean.FileLastModifiedCleanStrategy;
 import com.elvishew.xlog.printer.file.naming.DateFileNameGenerator;
 import com.faceunity.FURenderer;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import io.agora.capture.video.camera.CameraManager;
 import io.agora.framework.PreprocessorFaceUnity;
@@ -44,6 +45,7 @@ public class AgoraLiveApplication extends Application {
         super.onCreate();
         mPref = getSharedPreferences(Global.Constants.SF_NAME, Context.MODE_PRIVATE);
         mConfig = new Config(this);
+        CrashReport.initCrashReport(getApplicationContext(),  getString(R.string.bugly_app_id), BuildConfig.DEBUG);
         initXLog();
         initVideoGlobally();
         XLog.i("onApplicationCreate");
